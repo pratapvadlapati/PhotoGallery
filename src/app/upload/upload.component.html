@@ -1,0 +1,34 @@
+<div class="container" style="border-top: 15em">
+    
+
+    <div class="card" style="border-top: 15em">
+   <div class="card-header text-white bg-primary">
+       <p style="font-style: italic;  font-size: 1.5em"> 
+            Some times you will never know the true value of a moment untill it becomes a memory..
+       </p>
+   </div>
+   <form [formGroup]= "form" novalidate class="form">
+   <div class="card-body">
+   <span style="font-variant-caps: titling-caps" class="input-group-text">Enter Caption for you photo</span>
+   <input type="text" class="form-control" formControlName="caption">
+    </div>
+
+   <div class="">
+        <input type="file" style="display: none" #upload (change)="onSelected($event)"> 
+     <button style="border: 5em" class="btn btn-primary btn-md btn-block" type="button" (click)="upload.click()">Upload</button>
+     <button style="border: 5em" class="btn btn-success btn-md btn-block" type="submit" (click)="onUpload()">Submit</button>
+   </div>
+</form> 
+        
+   </div>
+   <hr>
+   <div *ngIf="FileUploadStatus == true">
+    <span class="alert alert-success">File upload success</span>
+</div>
+<div *ngIf="FileUploadStatus == false">
+    <span class="alert alert-danger">File upload failed</span>
+</div>
+    
+</div>
+
+

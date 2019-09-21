@@ -1,0 +1,18 @@
+<div class="container-fluid">
+        <div>
+                <div class="row" >
+                    <div class="col-md-4" *ngFor="let item of gallery?.images"> 
+                            <img src="http://localhost:3002/{{item?.imagePath}}" style="width: 100%; height: 80%;">
+                            <div class="caption">
+                                <p class="text-center">
+                                    {{item?.caption}}
+                                </p>
+                                <div class="">
+                                    <button class="fa fa-trash-o" type="button" id="remove" (click)="deleteImage(item?.imageId)"></button>
+                                </div>
+                            </div>
+                           
+                    </div>
+                </div>
+            </div>      
+</div>
