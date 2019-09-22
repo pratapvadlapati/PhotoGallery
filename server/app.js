@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
 let Gallery = require('./gallery.model');
 
 //setup db
-const mongoDB = 'mongodb://localhost:27017/gallery';
+//const mongoDB = 'mongodb://localhost:27017/gallery';
+const mongoDB = 'mongodb+srv://dbadmin:mongo@234@cluster0-1w9dq.mongodb.net/gallery?retryWrites=true&w=majority'
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true});
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongoDB connectionn error: '));
